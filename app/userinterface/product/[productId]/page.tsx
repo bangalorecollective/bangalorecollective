@@ -656,6 +656,13 @@ const lineTotal = unitPrice * quantity + (wantBagBox ? BAG_BOX_PRICE : 0);
   // ── Lightbox helpers ────────────────────────────────────────────────────
   const zoomableImages = images.filter((img) => !isVideoUrl(img.image_url));
   const isMainImageVideo = isVideoUrl(mainImage);
+  const activeImageIndex = Math.max(0, images.findIndex((img) => img.image_url === mainImage));
+
+  const moveGallery = (direction: number) => {
+    if (images.length < 2) return;
+    const nextIndex = (activeImageIndex + direction + images.length) % images.length;
+    setMainImage(images[nextIndex].image_url);
+  };
 
   const openLightbox = () => {
     if (isMainImageVideo || zoomableImages.length === 0) return;
@@ -721,6 +728,29 @@ const lineTotal = unitPrice * quantity + (wantBagBox ? BAG_BOX_PRICE : 0);
                   className="relative w-full overflow-hidden rounded-3xl border border-slate-100 dark:border-[#333] shadow-sm group bg-slate-50 dark:bg-[#111]/50 transition-colors duration-300"
                   style={{ aspectRatio: "1/1", maxWidth: "1600px", maxHeight: "1600px" }}
                 >
+                  {images.length > 1 && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => moveGallery(-1)}
+                        aria-label="Previous product photo"
+                        className="absolute left-3 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-800 shadow-md backdrop-blur transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-blue dark:bg-black/80 dark:text-white dark:hover:bg-black"
+                      >
+                        <ChevronLeft size={24} />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => moveGallery(1)}
+                        aria-label="Next product photo"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-800 shadow-md backdrop-blur transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-blue dark:bg-black/80 dark:text-white dark:hover:bg-black"
+                      >
+                        <ChevronRight size={24} />
+                      </button>
+                      <span aria-live="polite" aria-atomic="true" className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 rounded-full bg-black/60 px-3 py-1 text-xs font-semibold text-white pointer-events-none">
+                        {activeImageIndex + 1} / {images.length}
+                      </span>
+                    </>
+                  )}
                   {isMainImageVideo ? (
                     <video
                       src={mainImage}
