@@ -45,7 +45,7 @@ export default function BrandsRoster({ brands }: BrandsRosterProps) {
             }}
           >
             {duplicatedBrands.map((brand, idx) => (
-              <Link
+              <Link prefetch={false}
                 key={`${brand.id}-${idx}`}
                 href={`/userinterface/Gproducts?brand_id=${brand.id}`}
                 className="flex-none group w-[220px] md:w-[260px] py-4 block"

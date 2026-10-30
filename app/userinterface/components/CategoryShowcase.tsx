@@ -56,7 +56,7 @@ export default function CategoryShowcase({ categories, subcategories }: Category
           {subcategories
             .filter((sub) => sub.category_id === activeCategory)
             .map((sub) => (
-              <Link key={sub.id} href={`/userinterface/Gproducts/subcategory/${sub.id}`} className="group">
+              <Link prefetch={false} key={sub.id} href={`/userinterface/Gproducts/subcategory/${sub.id}`} className="group">
                 <div className="relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[2.5rem] bg-white dark:bg-[#111] border border-slate-100 dark:border-[#333] shadow-[0_10px_40px_rgba(0,0,0,0.04)] dark:shadow-none hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-all duration-500">
                   {sub.image_url ? (
                     <div className="relative h-[220px] sm:h-[280px] lg:h-[340px] overflow-hidden">

@@ -35,7 +35,7 @@ export default function ProductSpotlight({ latestProducts, userId }: ProductSpot
           </h2>
         </div>
 
-        <Link
+        <Link prefetch={false}
           href="/userinterface/Gproducts"
           className="group flex items-center gap-4 text-[10px] md:text-[11px] font-black tracking-[0.3em] text-brand-blue dark:text-white uppercase transition-all self-start md:self-auto"
         >

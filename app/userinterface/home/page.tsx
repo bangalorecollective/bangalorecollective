@@ -1,9 +1,9 @@
 import supabase from "@/lib/supabase";
 import HomeClient from "@/app/userinterface/home/HomeClient";
 
-// Cached and regenerated in the background every 60s instead of
-// hitting Supabase live on every single request.
-export const revalidate = 60;
+// Share the homepage for five minutes to reduce regeneration and ISR writes.
+// Catalog and promotional changes can take up to five minutes to appear here.
+export const revalidate = 300;
 
 export default async function HomePage() {
   try {

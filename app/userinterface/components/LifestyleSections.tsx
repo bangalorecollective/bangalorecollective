@@ -47,7 +47,7 @@ export default function LifestyleSections({ sections, attributes, userId }: Life
                   </h2>
                 </div>
 
-                <Link
+                <Link prefetch={false}
                   href={sectionHref}
                   className="group flex items-center gap-4 text-[10px] font-black tracking-[0.3em] text-[#2b2652] dark:text-white transition-all"
                 >

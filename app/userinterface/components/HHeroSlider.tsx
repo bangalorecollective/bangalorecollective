@@ -105,7 +105,7 @@ export default function HeroSlider({ heroSections, attributes }: HeroSliderProps
                       index === currentSlide ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
                     }`}
                   >
-                    <Link href={getHeroHref(hero)} className="group flex items-center gap-4 w-fit">
+                    <Link prefetch={false} href={getHeroHref(hero)} className="group flex items-center gap-4 w-fit">
                       <div className="px-8 py-4 bg-white text-black rounded-full text-[10px] font-black uppercase tracking-widest group-hover:bg-orange-600 group-hover:text-white transition-all shadow-xl">
                         {hero.lifestyle_tag ? "View Products" : hero.button_text || "Shop Now"}
                       </div>

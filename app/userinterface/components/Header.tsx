@@ -367,7 +367,7 @@ useEffect(() => {
         <div className="lg:hidden w-full px-4 transition-all duration-300 border-b border-white/10 dark:border-slate-800/50 backdrop-blur-xl bg-white/70 dark:bg-slate-950/70 shadow-sm">
           <div className="flex items-center justify-between h-16">
             {/* LOGO */}
-            <Link href="/userinterface/home" className="flex-shrink-0 transition-transform hover:scale-105 active:scale-95">
+            <Link prefetch={false} href="/userinterface/home" className="flex-shrink-0 transition-transform hover:scale-105 active:scale-95">
               <Image
                 src="/removebglogo.png"
                 alt="Logo"
@@ -428,12 +428,12 @@ useEffect(() => {
             : "bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-white/20 dark:border-slate-800/50"
             }`}
         >
-          <Link href="/userinterface/home" className="flex-shrink-0 transition-opacity hover:opacity-80">
+          <Link prefetch={false} href="/userinterface/home" className="flex-shrink-0 transition-opacity hover:opacity-80">
             <Image src="/logowhite.png" alt="Logo" width={160} height={50} className="h-12 w-auto object-contain brightness-0 dark:invert transition-all" />
           </Link>
 
           <nav className="flex items-center gap-0.5">
-            <Link
+            <Link prefetch={false}
               href="/userinterface/home"
               className="px-4 py-2 rounded-full tracking-[0.15em] font-bold text-[11px] uppercase text-slate-800 dark:text-slate-200 hover:bg-slate-900 hover:text-white dark:hover:bg-slate-100 dark:hover:text-slate-900 transition-all duration-300 whitespace-nowrap"
             >
@@ -445,7 +445,7 @@ useEffect(() => {
 
               if (!hasSubcategories) {
                 return (
-                  <Link
+                  <Link prefetch={false}
                     key={category.id}
                     href={`/userinterface/Gproducts/category/${category.id}`}
                     className="px-4 py-2 rounded-full flex items-center tracking-[0.15em] font-bold text-[11px] uppercase text-slate-800 dark:text-slate-200 hover:bg-slate-900 hover:text-white dark:hover:bg-slate-100 dark:hover:text-slate-900 transition-all duration-300 whitespace-nowrap"
@@ -477,7 +477,7 @@ useEffect(() => {
                       }`}
                   >
                     <div className="backdrop-blur-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-2xl rounded-2xl overflow-visible py-2">
-                      <Link
+                      <Link prefetch={false}
                         href={`/userinterface/Gproducts/category/${category.id}`}
                         onClick={() => {
                           setOpenDesktopCategory(null);
@@ -499,7 +499,7 @@ useEffect(() => {
                             onMouseEnter={() => hasDeep && setOpenSubCategory(sub.id)}
                             onMouseLeave={() => hasDeep && setOpenSubCategory(null)}
                           >
-                            <Link
+                            <Link prefetch={false}
                               href={`/userinterface/Gproducts/subcategory/${sub.id}`}
                               onClick={(e) => {
                                 if (hasDeep && !isSubOpen) {
@@ -528,7 +528,7 @@ useEffect(() => {
                               >
                                 <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl rounded-xl py-2">
                                   {sub.sub_subcategories.map((ssub) => (
-                                    <Link
+                                    <Link prefetch={false}
                                       key={ssub.id}
                                       href={`/userinterface/Gproducts/subsubcategory/${ssub.id}`}
                                       onClick={() => {
@@ -553,19 +553,19 @@ useEffect(() => {
             })}
 
             <div className="flex items-center gap-0.5 ml-2 pl-2 border-l border-slate-300/60 dark:border-slate-700">
-              <Link
+              <Link prefetch={false}
                 href="/userinterface/Gproducts"
                 className="px-4 py-2 rounded-full tracking-[0.15em] font-bold text-[11px] uppercase text-slate-800 dark:text-slate-200 hover:bg-slate-900 hover:text-white dark:hover:bg-slate-100 dark:hover:text-slate-900 transition-all duration-300 whitespace-nowrap"
               >
                 Fashion Studio
               </Link>
-              <Link
+              <Link prefetch={false}
                 href="/userinterface/videos"
                 className="px-4 py-2 rounded-full tracking-[0.15em] font-bold text-[11px] uppercase text-slate-800 dark:text-slate-200 hover:bg-slate-900 hover:text-white dark:hover:bg-slate-100 dark:hover:text-slate-900 transition-all duration-300 whitespace-nowrap"
               >
                 Videos
               </Link>
-              <Link
+              <Link prefetch={false}
                 href="/userinterface/about"
                 className="px-4 py-2 rounded-full tracking-[0.15em] font-bold text-[11px] uppercase text-slate-800 dark:text-slate-200 hover:bg-slate-900 hover:text-white dark:hover:bg-slate-100 dark:hover:text-slate-900 transition-all duration-300 whitespace-nowrap"
               >
@@ -594,10 +594,10 @@ useEffect(() => {
 
             {isAuthenticated && (
               <div className="flex items-center gap-1 border-r border-slate-300/60 dark:border-slate-700 pr-2 mr-1">
-                <Link href="/userinterface/wishlist" className="p-2.5 text-slate-800 dark:text-slate-200 hover:bg-slate-900/5 dark:hover:bg-white/10 rounded-full transition-all">
+                <Link prefetch={false} href="/userinterface/wishlist" className="p-2.5 text-slate-800 dark:text-slate-200 hover:bg-slate-900/5 dark:hover:bg-white/10 rounded-full transition-all">
                   <Heart size={19} />
                 </Link>
-                <Link href="/userinterface/cart" className="p-2.5 text-slate-800 dark:text-slate-200 hover:bg-slate-900/5 dark:hover:bg-white/10 rounded-full transition-all relative">
+                <Link prefetch={false} href="/userinterface/cart" className="p-2.5 text-slate-800 dark:text-slate-200 hover:bg-slate-900/5 dark:hover:bg-white/10 rounded-full transition-all relative">
                   <ShoppingCart size={19} />
                   {cartCount > 0 && (
                     <span className="absolute top-1 right-1 min-w-[16px] h-[16px] px-1 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-[9px] font-black rounded-full flex items-center justify-center shadow-sm">
@@ -635,7 +635,7 @@ useEffect(() => {
 
                 {dropdownOpen && (
                   <div className="absolute right-0 top-12 w-48 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-2xl rounded-xl py-1.5 z-[60]">
-                    <Link
+                    <Link prefetch={false}
                       href="/userinterface/order"
                       onClick={() => setDropdownOpen(false)}
                       className="flex items-center gap-3 px-4 py-2.5 text-[12px] font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
@@ -736,7 +736,7 @@ useEffect(() => {
               <div className="max-h-[60vh] overflow-y-auto p-2">
                 {searchResults.length > 0 ? (
                   searchResults.map((product) => (
-                    <Link
+                    <Link prefetch={false}
                       key={product.id}
                       href={`/userinterface/product/${product.id}`}
                       onClick={() => setIsSearchOpen(false)}
@@ -795,7 +795,7 @@ useEffect(() => {
                 {/* WISHLIST + CART — moved here from the top bar */}
                 {isAuthenticated && (
                   <div className="grid grid-cols-2 gap-3 mb-4 mt-4">
-                    <Link
+                    <Link prefetch={false}
                       href="/userinterface/wishlist"
                       onClick={() => setMobileMenuOpen(false)}
                       className="flex flex-col items-center justify-center gap-1.5 px-4 py-4 bg-slate-50 dark:bg-slate-900 rounded-2xl text-sm font-bold text-slate-800 dark:text-slate-200 hover:bg-black hover:text-white dark:hover:bg-black transition-all"
@@ -803,7 +803,7 @@ useEffect(() => {
                       <Heart size={20} />
                       Wishlist
                     </Link>
-                    <Link
+                    <Link prefetch={false}
                       href="/userinterface/cart"
                       onClick={() => setMobileMenuOpen(false)}
                       className="relative flex flex-col items-center justify-center gap-1.5 px-4 py-4 bg-slate-50 dark:bg-slate-900 rounded-2xl text-sm font-bold text-slate-800 dark:text-slate-200 hover:bg-black hover:text-white dark:hover:bg-black transition-all"
@@ -819,7 +819,7 @@ useEffect(() => {
                   </div>
                 )}
 
-                <Link
+                <Link prefetch={false}
                   href="/userinterface/home"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block px-4 py-4 text-lg font-bold text-slate-800 dark:text-slate-200 hover:bg-black hover:text-white dark:hover:bg-black rounded-xl transition-all border-b border-slate-50 dark:border-slate-800/50"
@@ -827,7 +827,7 @@ useEffect(() => {
                   Home
                 </Link>
 
-                <Link
+                <Link prefetch={false}
                   href="/userinterface/Gproducts"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block px-4 py-4 text-lg font-bold text-slate-800 dark:text-slate-200 hover:bg-black hover:text-white dark:hover:bg-black rounded-xl transition-all border-b border-slate-50 dark:border-slate-800/50"
@@ -835,7 +835,7 @@ useEffect(() => {
                   Fashion Studio
                 </Link>
 
-                <Link
+                <Link prefetch={false}
                   href="/userinterface/videos"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block px-4 py-4 text-lg font-bold text-slate-800 dark:text-slate-200 hover:bg-black hover:text-white dark:hover:bg-black rounded-xl transition-all border-b border-slate-50 dark:border-slate-800/50"
@@ -843,7 +843,7 @@ useEffect(() => {
                   Videos
                 </Link>
 
-                <Link
+                <Link prefetch={false}
                   href="/userinterface/about"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block px-4 py-4 text-lg font-bold text-slate-800 dark:text-slate-200 hover:bg-black hover:text-white dark:hover:bg-black rounded-xl transition-all border-b border-slate-50 dark:border-slate-800/50"
@@ -869,7 +869,7 @@ useEffect(() => {
 
                       {mobileCategoryOpen === category.id && (
                         <div className="pl-8 space-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
-                          <Link
+                          <Link prefetch={false}
                             href={`/userinterface/Gproducts/category/${category.id}`}
                             onClick={() => setMobileMenuOpen(false)}
                             className="block px-4 py-3 text-base font-semibold text-slate-700 dark:text-slate-300 hover:text-white hover:bg-black dark:hover:bg-black rounded-lg transition-all"
@@ -878,7 +878,7 @@ useEffect(() => {
                           </Link>
                           {category.subcategories?.map((sub) => (
                             <div key={`sub-wrapper-${sub.id}`}>
-                              <Link
+                              <Link prefetch={false}
                                 href={`/userinterface/Gproducts/subcategory/${sub.id}`}
                                 onClick={() => setMobileMenuOpen(false)}
                                 className="block pl-4 py-3 text-base font-semibold text-slate-700 dark:text-slate-300 hover:text-white hover:bg-black dark:hover:bg-black rounded-lg transition-all"
@@ -886,7 +886,7 @@ useEffect(() => {
                                 - {sub.name}
                               </Link>
                               {sub.sub_subcategories?.map((ssub) => (
-                                <Link
+                                <Link prefetch={false}
                                   key={`ssub-${ssub.id}`}
                                   href={`/userinterface/Gproducts/subsubcategory/${ssub.id}`}
                                   onClick={() => setMobileMenuOpen(false)}
@@ -917,7 +917,7 @@ useEffect(() => {
                         </p>
                       </div>
 
-                      <Link
+                      <Link prefetch={false}
                         href="/userinterface/order"
                         onClick={() => setMobileMenuOpen(false)}
                         className="flex items-center gap-3 px-4 py-4 text-lg font-bold text-slate-800 dark:text-slate-200 hover:bg-black hover:text-white dark:hover:bg-black rounded-xl transition-all"

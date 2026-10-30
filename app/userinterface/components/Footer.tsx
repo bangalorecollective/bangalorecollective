@@ -190,17 +190,17 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3.5">
               <li>
-                <Link href="/userinterface/home" className="text-sm text-neutral-600 dark:text-gray-400 hover:text-neutral-900 dark:hover:text-white hover:underline underline-offset-4 transition-colors">
+                <Link prefetch={false} href="/userinterface/home" className="text-sm text-neutral-600 dark:text-gray-400 hover:text-neutral-900 dark:hover:text-white hover:underline underline-offset-4 transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/userinterface/Gproducts" className="text-sm text-neutral-600 dark:text-gray-400 hover:text-neutral-900 dark:hover:text-white hover:underline underline-offset-4 transition-colors">
+                <Link prefetch={false} href="/userinterface/Gproducts" className="text-sm text-neutral-600 dark:text-gray-400 hover:text-neutral-900 dark:hover:text-white hover:underline underline-offset-4 transition-colors">
                   Fashion Studio
                 </Link>
               </li>
               <li>
-                <Link href="/userinterface/about" className="text-sm text-neutral-600 dark:text-gray-400 hover:text-neutral-900 dark:hover:text-white hover:underline underline-offset-4 transition-colors">
+                <Link prefetch={false} href="/userinterface/about" className="text-sm text-neutral-600 dark:text-gray-400 hover:text-neutral-900 dark:hover:text-white hover:underline underline-offset-4 transition-colors">
                   About Us
                 </Link>
               </li>
@@ -216,7 +216,7 @@ export default function Footer() {
               <ul className="space-y-3.5">
                 {categories.map((cat) => (
                   <li key={cat.id}>
-                    <Link
+                    <Link prefetch={false}
                       href={`/userinterface/Gproducts/category/${cat.id}`}
                       className="text-sm text-neutral-600 dark:text-gray-400 hover:text-neutral-900 dark:hover:text-white hover:underline underline-offset-4 transition-colors block"
                     >
@@ -302,11 +302,11 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center sm:text-left">
             <p className="font-medium text-neutral-700 dark:text-gray-400">© {year} Bangalore Collective.</p>
             <div className="flex items-center gap-4">
-              <Link href="/userinterface/privacy-policy" className="hover:text-neutral-900 dark:hover:text-white hover:underline underline-offset-2 transition-colors">
+              <Link prefetch={false} href="/userinterface/privacy-policy" className="hover:text-neutral-900 dark:hover:text-white hover:underline underline-offset-2 transition-colors">
                 Privacy Policy
               </Link>
               <span className="text-neutral-300 dark:text-gray-700 hidden sm:inline">|</span>
-              <Link href="/userinterface/terms-and-conditions" className="hover:text-neutral-900 dark:hover:text-white hover:underline underline-offset-2 transition-colors">
+              <Link prefetch={false} href="/userinterface/terms-and-conditions" className="hover:text-neutral-900 dark:hover:text-white hover:underline underline-offset-2 transition-colors">
                 Terms & Conditions
               </Link>
             </div>

@@ -14,7 +14,7 @@ const FULL_SELECT = `
 // Force fresh data per request since filters/pagination come from the URL.
 export const dynamic = "force-dynamic";
 
-// --- Static filter chrome: cached independently of product data, revalidated every 5 min. ---
+// --- Static filter chrome: cached independently of product data, revalidated hourly. ---
 // These rarely change, so there's no reason to hit the DB for them on every request.
 const getFilterChrome = unstable_cache(
   async () => {
@@ -33,7 +33,7 @@ const getFilterChrome = unstable_cache(
     };
   },
   ["products-filter-chrome"],
-  { revalidate: 300 } // 5 min
+  { revalidate: 3600 } // Brands, categories and tags can take up to an hour to update.
 );
 
 async function fetchProducts({

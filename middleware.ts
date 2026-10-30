@@ -85,6 +85,6 @@ export async function middleware(request: NextRequest) {
 // 4. Matcher rules (Skipping static assets cleanly)
 export const config = {
   matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|txt)$).*)',
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|txt|css|js|map|woff|woff2|ttf|otf|mp4|webm|mp3|wav|pdf)$).*)',
   ],
 };
