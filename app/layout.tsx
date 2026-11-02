@@ -1,3 +1,4 @@
+import brandLogo from "@/public/banglorecollectivelogo.jpg";
 import { Metadata } from "next";
 import "./globals.css";
 import ClientLayout from "./ClientLayout"; 
@@ -7,8 +8,8 @@ export const metadata: Metadata = {
 title: "Bangalore Collective",
 description: "Curating elegance through fashion, redefining the modern Bangalore aesthetic.",
 icons: {
-icon: "/banglorecollectivelogo.jpg", 
-apple: "/banglorecollectivelogo.jpg",
+icon: brandLogo.src,
+apple: brandLogo.src,
   },
 };
 

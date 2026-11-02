@@ -8,7 +8,7 @@ const PRODUCTS_PER_PAGE = 60;
 const FULL_SELECT = `
   id, name, lifestyle_tag_id, category_id, subcategory_id, sub_subcategory_id, brand_id, created_at,
   product_images(image_url),
-  product_variations!inner(id, price, stock, size_id, attributes:size_id(name))
+  product_variations!inner(id, price, sale_price, stock, size_id, attributes:size_id(name))
 `;
 
 // Force fresh data per request since filters/pagination come from the URL.

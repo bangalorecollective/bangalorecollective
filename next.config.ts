@@ -82,6 +82,42 @@ const nextConfig: NextConfig = {
   },
   output: "standalone",
   trailingSlash: true,
+  async headers() {
+    // These public images have stable filenames. Let browsers reuse them for a
+    // day without contacting the CDN; rename a file when it must update sooner.
+    // Keep HTML, API responses and downloads on their existing cache policies.
+    const publicImages = [
+      "/2ndbanner.jpg",
+      "/ban.png",
+      "/banglorecollectivelogo.jpg",
+      "/banglorelogo.jpeg",
+      "/banner.png",
+      "/banner01.jpg",
+      "/coachbrand.jpg",
+      "/download.jpg",
+      "/file.svg",
+      "/globe.svg",
+      "/icon-background.png",
+      "/icon-foreground.png",
+      "/icon-only.png",
+      "/logowhite.png",
+      "/next.svg",
+      "/path-to-your-bag-image.jpg",
+      "/path-to-your-men-image.jpg",
+      "/path-to-your-stole-image.jpg",
+      "/phto.png",
+      "/removebglogo.png",
+      "/splash.png",
+      "/vercel.svg",
+      "/whatsappicons.png",
+      "/whatsicon.png",
+      "/window.svg",
+    ];
+    return publicImages.map((source) => ({
+      source,
+      headers: [{ key: "Cache-Control", value: "public, max-age=86400" }],
+    }));
+  },
   async redirects() {
     return [
       {

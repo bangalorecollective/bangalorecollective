@@ -437,7 +437,7 @@ function EmptyCart() {
         <ShoppingBag size={24} className="text-slate-200 dark:text-gray-600" />
       </div>
       <p className="text-slate-400 dark:text-gray-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-6 transition-colors duration-300">Your bag is currently empty</p>
-      <Link href="/userinterface/Gproducts" className="group flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-slate-950 dark:text-white hover:text-brand-gold dark:hover:text-brand-gold transition-colors duration-300">
+      <Link prefetch={false} href="/userinterface/Gproducts" className="group flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-slate-950 dark:text-white hover:text-brand-gold dark:hover:text-brand-gold transition-colors duration-300">
         Start Shopping <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
       </Link>
     </div>

@@ -157,7 +157,7 @@ export default function UserOrdersPage() {
           <div className="h-[40vh] border border-slate-100 dark:border-[#333] bg-white dark:bg-[#111]/50 rounded-[2.5rem] flex flex-col items-center justify-center text-center p-12 transition-colors duration-300">
             <Package size={40} className="text-slate-200 dark:text-gray-700 mb-4 transition-colors duration-300" />
             <h2 className="text-lg font-black text-brand-blue dark:text-white uppercase tracking-widest mb-2 transition-colors duration-300">No History Found</h2>
-            <Link href="/userinterface/Gproducts" className="text-[10px] font-black uppercase tracking-widest text-brand-gold border-b-2 border-brand-gold pb-1 hover:text-brand-blue dark:hover:text-white transition-colors duration-300">Begin Collection</Link>
+            <Link prefetch={false} href="/userinterface/Gproducts" className="text-[10px] font-black uppercase tracking-widest text-brand-gold border-b-2 border-brand-gold pb-1 hover:text-brand-blue dark:hover:text-white transition-colors duration-300">Begin Collection</Link>
           </div>
         ) : (
           <div className="space-y-4">

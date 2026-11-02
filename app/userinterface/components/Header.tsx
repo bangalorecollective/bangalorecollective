@@ -1,5 +1,7 @@
 "use client";
 
+import whiteLogo from "@/public/logowhite.png";
+import mobileLogo from "@/public/removebglogo.png";
 import { ShoppingCart, User, Heart, ChevronDown, LogOut, Package, ChevronRight, Menu, X, Search, Sun, Moon, Download } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -369,12 +371,13 @@ useEffect(() => {
             {/* LOGO */}
             <Link prefetch={false} href="/userinterface/home" className="flex-shrink-0 transition-transform hover:scale-105 active:scale-95">
               <Image
-                src="/removebglogo.png"
+                src={mobileLogo.src}
                 alt="Logo"
                 width={140}
                 height={50}
                 className="h-12 w-auto object-contain dark:invert transition-all"
-                priority
+                loading="lazy"
+                fetchPriority="high"
               />
             </Link>
 
@@ -429,7 +432,7 @@ useEffect(() => {
             }`}
         >
           <Link prefetch={false} href="/userinterface/home" className="flex-shrink-0 transition-opacity hover:opacity-80">
-            <Image src="/logowhite.png" alt="Logo" width={160} height={50} className="h-12 w-auto object-contain brightness-0 dark:invert transition-all" />
+            <Image src={whiteLogo.src} alt="Logo" width={160} height={50} className="h-12 w-auto object-contain brightness-0 dark:invert transition-all" />
           </Link>
 
           <nav className="flex items-center gap-0.5">

@@ -1,5 +1,7 @@
 "use client";
 
+import brandLogo from "@/public/banglorecollectivelogo.jpg";
+import whiteLogo from "@/public/logowhite.png";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -146,21 +148,21 @@ export default function Footer() {
             <div className="relative w-44 h-12">
               {/* Light Mode Logo */}
               <Image
-                src="/banglorecollectivelogo.jpg"
+                src={brandLogo.src}
                 alt="Bangalore Collective Logo"
                 fill
                 sizes="(max-width: 768px) 176px, 176px"
                 className="object-contain object-left block dark:hidden"
-                priority
+                loading="lazy"
               />
               {/* Dark Mode Logo */}
               <Image
-                src="/logowhite.png"
+                src={whiteLogo.src}
                 alt="Bangalore Collective Logo"
                 fill
                 sizes="(max-width: 768px) 176px, 176px"
                 className="object-contain object-left hidden dark:block"
-                priority
+                loading="lazy"
               />
             </div>
             <p className="text-neutral-600 dark:text-gray-400 text-sm leading-relaxed max-w-xs font-normal">

@@ -483,7 +483,7 @@ export default function OrderUpdatePage() {
         {/* Top Navigation */}
         <div className="flex items-center gap-3 text-[10px] text-slate-400 mb-8 font-black tracking-[0.2em]">
           <Package size={14} className="text-brand-gold" />
-          <Link href="/orderupdate" className="hover:text-brand-blue transition-colors">REGISTRY</Link>
+          <Link prefetch={false} href="/orderupdate" className="hover:text-brand-blue transition-colors">REGISTRY</Link>
           <ChevronRight size={12} />
           <span className="text-brand-gold">ORDER ARCHIVE</span>
         </div>

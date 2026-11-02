@@ -109,7 +109,7 @@ export default function WishlistPage() {
           <div className="flex flex-col items-center justify-center min-h-[50vh] text-center">
             <ShieldCheck size={32} className="text-slate-200 dark:text-gray-800 mb-4 transition-colors duration-300" />
             <h2 className="text-xl font-bold tracking-tight mb-6">Please Sign In</h2>
-            <Link href="/login" className="bg-slate-900 dark:bg-white text-white dark:text-black px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-brand-gold dark:hover:bg-brand-gold dark:hover:text-white transition-all duration-300">
+            <Link prefetch={false} href="/login" className="bg-slate-900 dark:bg-white text-white dark:text-black px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-brand-gold dark:hover:bg-brand-gold dark:hover:text-white transition-all duration-300">
                 Identify
             </Link>
           </div>
@@ -254,7 +254,7 @@ function WishlistCard({ item, onRemove, userId }: any) {
                 </>
               )}
             </button>
-            <Link href={`/userinterface/product/${item.product_id}`} className="p-2 bg-slate-50 dark:bg-[#222] rounded-lg text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-white border border-slate-100 dark:border-[#444] transition-colors duration-300">
+            <Link prefetch={false} href={`/userinterface/product/${item.product_id}`} className="p-2 bg-slate-50 dark:bg-[#222] rounded-lg text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-white border border-slate-100 dark:border-[#444] transition-colors duration-300">
                 <ArrowUpRight size={14} />
             </Link>
           </div>
@@ -279,7 +279,7 @@ function EmptyState() {
         <Zap size={20} className="text-slate-200 dark:text-gray-700 transition-colors duration-300" />
       </div>
       <p className="text-slate-400 dark:text-gray-500 text-[11px] font-medium uppercase tracking-[0.2em] mb-6 transition-colors duration-300">Empty Collection</p>
-      <Link href="/userinterface/Gproducts" className="group flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-900 dark:text-white transition-colors duration-300">
+      <Link prefetch={false} href="/userinterface/Gproducts" className="group flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-900 dark:text-white transition-colors duration-300">
         Browse <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
       </Link>
     </div>

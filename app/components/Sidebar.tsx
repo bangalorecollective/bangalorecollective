@@ -1,5 +1,6 @@
 "use client";
 
+import brandLogo from "@/public/banglorecollectivelogo.jpg";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -121,7 +122,7 @@ const filteredMenu = role === "subadmin"
       <div className="pt-12 pb-10 px-8 flex flex-col items-center">
         <div className="w-full flex justify-center mb-6">
           <img
-            src="/banglorecollectivelogo.jpg"
+            src={brandLogo.src}
             alt="Logo"
             className="h-12 w-auto object-contain brightness-0 invert"
           />
@@ -161,7 +162,7 @@ const filteredMenu = role === "subadmin"
                       {item.subMenu.map((sub) => {
                         const isSubActive = pathname === sub.href;
                         return (
-                          <Link
+                          <Link prefetch={false}
                             key={sub.label}
                             href={sub.href}
                             className={`
@@ -180,7 +181,7 @@ const filteredMenu = role === "subadmin"
                   )}
                 </div>
               ) : (
-                <Link
+                <Link prefetch={false}
                   href={item.href!}
                   className={`flex items-center gap-4 px-5 py-3.5 rounded-2xl mb-1 transition-all duration-300
                   ${pathname === item.href ? "bg-brand-gold text-white shadow-lg shadow-black/20" : "text-white/50 hover:text-white hover:bg-white/5"}`}

@@ -73,6 +73,11 @@ function ProductCard({
   }, [cleanProductImage]);
 
   const isCurrentVarOutOfStock = !selectedVar || selectedVar.stock <= 0;
+  const originalPrice = Number(selectedVar?.price);
+  const salePrice = Number(selectedVar?.sale_price);
+  const hasSalePrice = Number.isFinite(salePrice) && salePrice > 0;
+  const hasDiscount = hasSalePrice && Number.isFinite(originalPrice) && salePrice < originalPrice;
+  const currentPrice = hasSalePrice ? salePrice : originalPrice;
 
   const variationsWithLabels = useMemo(() => {
     if (!product.product_variations || product.product_variations.length === 0) return [];
@@ -223,15 +228,25 @@ function ProductCard({
             {product.name}
           </h3>
 
-          <span
-            className={`text-sm font-black ${
-              isCurrentVarOutOfStock
-                ? "text-red-400 line-through decoration-red-500"
-                : "text-brand-blue dark:text-white transition-colors duration-300"
-            }`}
-          >
-            ₹{selectedVar?.sale_price || selectedVar?.price || "N/A"}
-          </span>
+          <div className="flex flex-wrap items-baseline justify-end gap-x-2 gap-y-0.5 text-right">
+            {hasDiscount && (
+              <del className="text-xs font-medium text-slate-400 dark:text-gray-500" aria-label="Original price">
+                ₹{originalPrice.toLocaleString("en-IN")}
+              </del>
+            )}
+            <span
+              className={`text-sm font-black whitespace-nowrap ${
+                isCurrentVarOutOfStock
+                  ? "text-red-400 line-through decoration-red-500"
+                  : "text-brand-blue dark:text-white transition-colors duration-300"
+              }`}
+              aria-label={hasDiscount ? "Sale price" : "Price"}
+            >
+              {selectedVar && Number.isFinite(currentPrice)
+                ? `₹${currentPrice.toLocaleString("en-IN")}`
+                : "N/A"}
+            </span>
+          </div>
         </div>
 
         <p className="text-[10px] text-slate-400 dark:text-gray-400 line-clamp-2 mb-3 transition-colors duration-300">

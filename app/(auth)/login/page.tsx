@@ -1,5 +1,6 @@
 "use client";
 
+import brandLogo from "@/public/banglorecollectivelogo.jpg";
 import { Eye, EyeOff, ArrowRight, Lock } from "lucide-react";
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
@@ -67,7 +68,7 @@ export default function Login() {
             <header className="mb-10 text-center lg:text-left">
               <div className="mb-8 flex justify-center lg:justify-start">
                 <img 
-                  src="/banglorecollectivelogo.jpg" 
+                  src={brandLogo.src}
                   alt="Logo" 
                   className="h-12 w-auto object-contain" 
                   style={{ filter: 'contrast(1.1)' }}

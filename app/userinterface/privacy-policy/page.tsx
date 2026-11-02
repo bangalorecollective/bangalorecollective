@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
       {/* --- HEADER --- */}
       <header className="bg-gradient-to-r from-[#c4a174] to-[#8a6d3b] dark:from-[#b08d60] dark:to-[#6b522b] pt-32 pb-20 px-6 text-center text-white transition-colors duration-300">
         <div className="max-w-4xl mx-auto">
-          <Link href="/" className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-8 transition-all group">
+          <Link prefetch={false} href="/userinterface/home/" className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-8 transition-all group">
             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
             <span className="text-[10px] font-black uppercase tracking-widest">Return to Maison</span>
           </Link>

@@ -128,7 +128,7 @@ export default function CategoriesPage() {
         <div className="bg-slate-900 dark:bg-[#111]/80 dark:border dark:border-[#333] py-16 rounded-[2.5rem] mx-auto max-w-5xl text-white relative overflow-hidden transition-colors duration-300">
           <div className="relative z-10 px-6">
             <h2 className="text-3xl font-black tracking-tighter mb-6 leading-tight">Can't find what you're looking for?</h2>
-            <Link href="/userinterface/shop" className="inline-flex items-center gap-4 bg-orange-600 dark:bg-orange-500 px-8 py-4 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white dark:hover:bg-[#222] hover:text-orange-600 dark:hover:text-white transition-all shadow-2xl active:scale-95">
+            <Link prefetch={false} href="/userinterface/shop" className="inline-flex items-center gap-4 bg-orange-600 dark:bg-orange-500 px-8 py-4 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white dark:hover:bg-[#222] hover:text-orange-600 dark:hover:text-white transition-all shadow-2xl active:scale-95">
               View All Products <ArrowUpRight size={16} />
             </Link>
           </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import brandLogo from "@/public/banglorecollectivelogo.jpg";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
@@ -100,7 +101,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           <div className="relative z-10 flex items-center md:items-start justify-between md:flex-col gap-4">
             <div className="flex items-center gap-3 md:gap-0">
               <div className="w-10 h-10 md:w-16 md:h-16 bg-white/10 backdrop-blur-md rounded-xl p-1.5 border border-white/10 shadow-inner flex items-center justify-center">
-                <img src="/banglorecollectivelogo.jpg" alt="Logo" className="w-full h-full object-contain rounded-lg invert brightness-200" />
+                <img src={brandLogo.src} alt="Logo" className="w-full h-full object-contain rounded-lg invert brightness-200" />
               </div>
               <div className="md:hidden">
                 <p className="text-white font-bold text-sm tracking-tight">The Collective</p>

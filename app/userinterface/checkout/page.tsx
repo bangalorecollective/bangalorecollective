@@ -904,7 +904,7 @@ const discountAmount = appliedCoupon
                   />
                   <label htmlFor="terms-checkbox" className="text-[10px] font-semibold text-slate-500 dark:text-gray-400 leading-relaxed cursor-pointer select-none transition-colors duration-300">
                     I have read and agree to the{" "}
-                    <Link
+                    <Link prefetch={false}
                       href="/userinterface/terms-and-conditions"
                       target="_blank"
                       onClick={e => e.stopPropagation()}

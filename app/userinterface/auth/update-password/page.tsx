@@ -26,7 +26,7 @@ export default function UpdatePasswordPage() {
         setHasSession(true);
       } else {
         toast.error("Recovery token expired or invalid.");
-        router.push("/");
+        router.push("/userinterface/home/");
       }
     };
     checkSession();
@@ -48,7 +48,7 @@ export default function UpdatePasswordPage() {
       if (error) throw error;
 
       toast.success("Security Credentials Updated!");
-      router.push("/"); // Redirect safely to home or dashboard
+      router.push("/userinterface/home/"); // Redirect safely to home or dashboard
     } catch (error: any) {
       toast.error(error.message || "Failed to update password.");
     } finally {

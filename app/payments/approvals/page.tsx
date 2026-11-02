@@ -138,7 +138,7 @@ export default function AdminOrdersPage() {
         {/* HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
           <div className="space-y-4">
-            <Link href="/admin" className="flex items-center gap-2 text-slate-400 hover:text-brand-blue transition-all text-[10px] font-black uppercase tracking-[0.3em]">
+            <Link prefetch={false} href="/admin" className="flex items-center gap-2 text-slate-400 hover:text-brand-blue transition-all text-[10px] font-black uppercase tracking-[0.3em]">
               <ArrowLeft size={14} className="text-brand-gold" /> Central Command
             </Link>
             <h1 className="text-5xl font-black tracking-tighter uppercase text-brand-blue leading-none">
@@ -277,7 +277,7 @@ export default function AdminOrdersPage() {
                       <td className="p-8 text-right">
                         {isPaid ? (
                           // Already paid — show audit link only
-                          <Link
+                          <Link prefetch={false}
                             href={`/orderupdate/vieworder/${order.id}`}
                             className="inline-flex items-center gap-2 text-slate-300 hover:text-brand-gold transition-colors text-[9px] font-black uppercase tracking-widest"
                           >

@@ -199,7 +199,7 @@ export default function BrandList() {
             </h1>
           </div>
           
-          <Link href="/brands/newbrands">
+          <Link prefetch={false} href="/brands/newbrands">
             <button className="h-16 px-10 bg-[#2b2652] text-[#c4a174] rounded-2xl font-black text-[11px] uppercase tracking-[0.2em] hover:bg-[#c4a174] hover:text-[#2b2652] transition-all flex items-center gap-4 group shadow-2xl shadow-[#2b2652]/20 active:scale-95">
               <Plus className="w-4 h-4" /> 
               Add Registry 
