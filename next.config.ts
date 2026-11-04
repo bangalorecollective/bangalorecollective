@@ -91,6 +91,7 @@ const nextConfig: NextConfig = {
       "/ban.png",
       "/banglorecollectivelogo.jpg",
       "/banglorelogo.jpeg",
+      "/banglorelogo.webp",
       "/banner.png",
       "/banner01.jpg",
       "/coachbrand.jpg",
@@ -106,11 +107,13 @@ const nextConfig: NextConfig = {
       "/path-to-your-men-image.jpg",
       "/path-to-your-stole-image.jpg",
       "/phto.png",
+      "/phto.webp",
       "/removebglogo.png",
       "/splash.png",
       "/vercel.svg",
       "/whatsappicons.png",
       "/whatsicon.png",
+      "/whatsicon.webp",
       "/window.svg",
     ];
     return publicImages.map((source) => ({

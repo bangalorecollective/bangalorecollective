@@ -61,7 +61,7 @@ const DEFAULT_DATA = {
   cat3_image_url: "",
   live_badge: "Live Gallery",
   live_title: "BUILT AROUND \nTrust, Style and Quality",
-  live_image_url: "/phto.png",
+  live_image_url: "/phto.webp",
   live_quote: "The minimalist aesthetic I've been searching for. A true sanctuary for modern living.",
   stat1_value: "10,000+",
   stat1_label: "Trusted Customers",

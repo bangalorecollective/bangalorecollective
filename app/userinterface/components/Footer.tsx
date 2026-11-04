@@ -1,7 +1,7 @@
 "use client";
 
 import brandLogo from "@/public/banglorecollectivelogo.jpg";
-import whiteLogo from "@/public/logowhite.png";
+import whiteLogo from "@/public/logowhite.webp";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";

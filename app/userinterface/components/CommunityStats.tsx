@@ -89,7 +89,7 @@ export default function CommunityStats({ data }: CommunityStatsProps) {
             <div className="relative bg-slate-50 dark:bg-[#111] p-3 rounded-[3rem] shadow-sm border border-slate-100 dark:border-[#333] overflow-hidden transition-colors duration-300">
               <div className="relative h-[450px] overflow-hidden rounded-[2.5rem]">
                 <OptimizedImage
-                  src={data.live_image_url || "/phto.png"}
+                  src={data.live_image_url || "/phto.webp"}
                   alt="Community Feature"
                   fill
                   sizes="(max-width: 1024px) 100vw, 58vw"

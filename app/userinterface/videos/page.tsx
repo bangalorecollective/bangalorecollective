@@ -337,7 +337,7 @@ export default function VideoPage() {
             <div className="flex-shrink-0 relative">
               <div className="w-24 h-24 md:w-36 md:h-36">
                 <img
-                  src="/banglorelogo.jpeg"
+                  src="/banglorelogo.webp"
                   className="w-full h-full object-contain"
                   alt="Profile Logo"
                 />
@@ -572,7 +572,7 @@ export default function VideoPage() {
                       target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}
                       className="bg-[#25D366] p-2.5 rounded-xl text-white shadow-lg flex-shrink-0"
                     >
-                      <img src="/whatsicon.png" className="w-5 h-5" alt="WA" />
+                      <img src="/whatsicon.webp" className="w-5 h-5" alt="WA" />
                     </a>
                   </div>
                 </div>

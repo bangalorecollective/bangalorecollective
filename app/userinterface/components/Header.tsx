@@ -1,7 +1,7 @@
 "use client";
 
-import whiteLogo from "@/public/logowhite.png";
-import mobileLogo from "@/public/removebglogo.png";
+import whiteLogo from "@/public/logowhite.webp";
+import mobileLogo from "@/public/removebglogo.webp";
 import { ShoppingCart, User, Heart, ChevronDown, LogOut, Package, ChevronRight, Menu, X, Search, Sun, Moon, Download } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
